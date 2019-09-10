@@ -1,0 +1,24 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.2.2)
+
+PROJECT(L3Pilot_CDF_EXAMPLE_SRC)
+
+# Set the type of library used
+SET(LIB_TYPE SHARED)
+STRING(TOLOWER ${LIB_TYPE} SEARCH_TYPE)
+# Find the HDF5 directory
+FIND_PACKAGE(HDF5 NAMES hdf5 COMPONENTS C ${SEARCH_TYPE})
+# Set the libraries for linking
+SET(LINK_LIBS ${LINK_LIBS} ${HDF5_C_${LIB_TYPE}_LIBRARY})
+INCLUDE_DIRECTORIES(
+    ${L3P_EXAMPLE_INCLUDE_DIR}
+    ${HDF5_INCLUDE_DIR}
+)
+# Add the source directory for the writing example
+IF(BUILD_WRITE_EXAMPLE)
+    ADD_SUBDIRECTORY(${L3P_EXAMPLE_SRC_DIR}/writing)
+ENDIF()
+
+# Add the source directory for the reading example
+IF(BUILD_READ_EXAMPLE)
+    ADD_SUBDIRECTORY(${L3P_EXAMPLE_SRC_DIR}/reading)
+ENDIF()

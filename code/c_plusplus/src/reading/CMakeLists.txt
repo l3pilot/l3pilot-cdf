@@ -1,0 +1,17 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.2.2)
+
+PROJECT(L3Pilot_CDF_EXAMPLE_READING)
+
+# Set the name of the executable
+SET(EXE_NAME ReadExample)
+# Add the executable
+ADD_EXECUTABLE(${EXE_NAME}
+    read_example.cpp
+)
+# Link the libraries
+TARGET_LINK_LIBRARIES(${EXE_NAME} 
+    ${LINK_LIBS}
+)
+SET_TARGET_PROPERTIES(${EXE_NAME}
+    PROPERTIES PROJECT_LABEL ${PROJECT_NAME}
+)
