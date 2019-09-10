@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Except for these files
+!.gitignore
+!*.m
+!*.md
+
+# Even if they are in subdirectories
+!*/
