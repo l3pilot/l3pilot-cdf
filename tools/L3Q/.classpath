@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="jarhdf-4.2.14.jar"/>
+	<classpathentry kind="lib" path="slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="slf4j-simple-1.7.25.jar"/>
+	<classpathentry kind="lib" path="jarhdf5-1.10.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

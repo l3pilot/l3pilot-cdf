@@ -1,0 +1,3691 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Validation report</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:normal;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;
+	font-weight:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	letter-spacing:-.5pt;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Calibri Light",sans-serif;
+	color:#1F4D78;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Calibri Light",sans-serif;
+	letter-spacing:-.5pt;}
+p.msotitlecxspfirst, li.msotitlecxspfirst, div.msotitlecxspfirst
+	{mso-style-name:msotitlecxspfirst;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	letter-spacing:-.5pt;}
+p.msotitlecxspmiddle, li.msotitlecxspmiddle, div.msotitlecxspmiddle
+	{mso-style-name:msotitlecxspmiddle;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	letter-spacing:-.5pt;}
+p.msotitlecxsplast, li.msotitlecxsplast, div.msotitlecxsplast
+	{mso-style-name:msotitlecxsplast;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:28.0pt;
+	font-family:"Calibri Light",sans-serif;
+	letter-spacing:-.5pt;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page WordSection1
+	{size:841.9pt 595.3pt;
+	margin:2.0cm 70.85pt 2.0cm 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=FI>
+
+<div class=WordSection1>
+
+<h1 style='margin-bottom:0cm;margin-bottom:.0001pt'>L3Pilot Log File Quality Check</h1>
+
+<h1 style='margin-top:0cm'><span style='font-size:12.0pt'>Software version
+0.22, 18.07.2019</span></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><b>General</b></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>File name: %FNAME%</p>
+
+<p class=MsoNormal>Time period: %RPERIOD% (from egoVehicle timestamps)</p>
+
+<p class=MsoNormal>Total distance driven, GPS: %TOTAL_DISTANCE_GPS% and
+odometer: %TOTAL_DISTANCE_ODO%</p>
+
+<p class=MsoNormal>Percentage of automated driving: %PERCENT_AD%</p>
+
+<p class=MsoNormal>Take-over requests: %NR_TOR%</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>%TABLE_DIMENSIONS_CHECK%&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Max time difference between system time and GPS time from a
+single sample (a large value indicates that logger time is not set or there are
+CPU overload issues): %POTI_MaxTimeDiff%<br>
+Average time difference: %POTI_AvgTimeDiff%<br>
+Longest potential pause in logging: %LongestPause% s at filetime
+%logging_pause_at% s</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Detected other errors (list): %ERRORS%</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=3 width="100%" align=center>
+
+</div>
+
+<h2><br>
+<b>Table: egoVehicle</b></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0
+ style='width:626.0pt;border-collapse:collapse'>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Signal</span></b></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Min</span></b></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Max</span></b></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Average</span></b></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Frequency (of valid)</span></b></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Longest time without</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>UTCTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%0min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%0max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%0avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%0hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%0maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FileTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%1min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%1max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%1avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%1hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%1maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>ABSIntervention</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%2min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%2max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%2avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%2hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%2maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>ADFunctionActive</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%3min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%3max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%3avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%3hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%3maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>ADFunctionAvailable</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%4min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%4max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%4avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%4hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%4maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>AmbientLightLevel</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%32min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%32max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%32avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%32hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%32maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>AmbientTemperature</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%5min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%5max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%5avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%5hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%5maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>BaselineADASActive</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%6min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%6max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%6avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%6hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%6maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>BaselineADASIntervention</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%7min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%7max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%7avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%7hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%7maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>BrakeLight</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%8min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%8max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%8avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%8hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%8maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>BrakePedalPos</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%9min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%9max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%9avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%9hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%9maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>BrakePressure</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%10min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%10max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%10avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%10hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%10maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>DirectionIndicator</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%11min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%11max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%11avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%11hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%11maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>EnergyConsumption</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%12min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%12max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%12avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%12hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%12maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>ESCIntervention</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%14min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%14max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%14avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%14hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%14maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FrontFogLightStatus</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%33min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%33max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%33avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%33hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%33maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FrontWiperStatus</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%34min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%34max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%34avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%34hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%34maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FuelConsumption</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%15min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%15max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%15avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%15hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%15maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>HandsOnDetection</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%17min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%17max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%17avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%17hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%17maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>LatAcceleration</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%19min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%19max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%19avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%19hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%19maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>LongAcceleration</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%20min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%20max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%20avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%20hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%20maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Odometer</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%21min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%21max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%21avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%21hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%21maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>RearFogLightStatus</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%35min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%35max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%35avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%35hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%35maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>SteeringAngle</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%22min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%22max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%22avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%22hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%22maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>SteeringAngleADF</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%39min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%39max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%39avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%39hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%39maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>ThrottlePedalPos</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%25min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%25max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%25avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%25hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%25maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TOR</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%26min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%26max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%26avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%26hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%26maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TorsionBarTorque</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%27min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%27max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%27avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%27hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%27maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>VehicleSpeed</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%29min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%29max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%29avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%29hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%29maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>YawRate</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%31min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%31max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%31avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%31hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%31maxpause%</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><b>Table: LaneLines</b> </h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0
+ style='width:626.0pt;border-collapse:collapse'>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Signal</span></b></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Min</span></b></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Max</span></b></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Average</span></b></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Frequency (of valid)</span></b></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Longest time without</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>UTCTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%40min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%40max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%40avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%40hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%40maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FileTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%41min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%41max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%41avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%41hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%41maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>EgoLaneWidth</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%42min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%42max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%42avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%42hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%42maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sLaneLine-Curvature</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%43min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%43max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%43avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%43hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%43maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sLaneLine-CurvatureDx</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%44min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%44max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%44avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%44hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%44maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sLaneLine-Dy</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%45min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%45max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%45avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%45hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%45maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sLaneLine-QualityIndex</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%46min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%46max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%46avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%46hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%46maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sLaneLine-MarkingType</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%47min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%47max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%47avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%47hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%47maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sLaneLine-YawAngle</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%48min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%48max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%48avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%48hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%48maxpause%</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><b>Table: Objects</b></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0
+ style='width:626.0pt;border-collapse:collapse'>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Signal</span></b></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Min</span></b></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Max</span></b></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Average</span></b></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Frequency (of valid)</span></b></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Longest time without</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>UTCTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%60min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%60max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%60avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%60hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%60maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FileTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%61min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%61max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%61avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%61hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%61maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>LeadVehicleID</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%62min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%62max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%62avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%62hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%62maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>NumberOfObjects</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%63min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%63max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%63avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%63hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%63maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-Classification</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%64min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%64max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%64avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%64hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%64maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-Height</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%65min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%65max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%65avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%65hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%65maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-ID (doesn't check)</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%66min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%66max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%66avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%66hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%66maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-LatPosition</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%67min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%67max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%67avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%67hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%67maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-LatVelocity</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%68min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%68max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%68avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%68hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%68maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-Length</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%69min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%69max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%69avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%69hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%69maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-LongPosition</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%70min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%70max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%70avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%70hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%70maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-LongVelocity</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%71min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%71max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%71avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%71hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%71maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-Width</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%72min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%72max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%72avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%72hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%72maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-YawAngle</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%73min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%73max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%73avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%73hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%73maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>sObject-YawRate</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%74min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%74max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%74avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%74hz%&nbsp;</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%74maxpause%&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><b>Table: Positioning</b></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0
+ style='width:626.0pt;border-collapse:collapse'>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Signal</span></b></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Min</span></b></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Max</span></b></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Average</span></b></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Frequency (of valid)</span></b></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Longest time without</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>UTCTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%80min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%80max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%80avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%80hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%80maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FileTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%81min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%81max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%81avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%81hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%81maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Altitude</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%82min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%82max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%82avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%82hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%82maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>GNSSSpeed</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%84min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%84max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%84avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%84hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%84maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>GNSSTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%90min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%90max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%90avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%90hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%90maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Heading</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%91min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%91max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%91avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%91hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%91maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Latitude</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%86min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%86max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%86avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%86hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%86maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Longitude</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%87min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%87max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%87avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%87hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%87maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>NumberOfSatellites</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%88min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%88max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%88avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%88hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%88maxpause%</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><b>Table: Metadata (Java libraries support the format only partially)</b></h2>
+
+<h2>&nbsp;</h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr style='height:17.0pt'>
+  <td nowrap rowspan=6 style='border:solid windowtext 1.0pt;background:#BDD7EE;
+  padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>General</span></p>
+  </td>
+  <td nowrap style='border:solid windowtext 1.0pt;border-left:none;background:
+  #BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Field</span></b></p>
+  </td>
+  <td valign=top style='border:solid windowtext 1.0pt;border-left:none;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Field has been filled (yes/no/value)</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>ADFVersion</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m01%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FormatVersion</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m02%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Partner</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m03%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>RecordDate</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m04%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>UTCOffset</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m05%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap rowspan=2 style='border:solid windowtext 1.0pt;border-top:none;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Driver</span></p>
+  </td>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>DriverID</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m10%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>DriverType</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m11%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap rowspan=10 style='border:solid windowtext 1.0pt;border-top:none;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Car</span></p>
+  </td>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>DriveType</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m20%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FuelType</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m21%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>NumberOfOccupants</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m22%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>PositionFrontBumper</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m23%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>PositionRearBumper</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m24%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Transmission</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m25%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>VehicleLength</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m26%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>VehicleWeight</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m27%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>VehicleWidth</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m28%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>VehicleID</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m29%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap rowspan=9 style='border:solid windowtext 1.0pt;border-top:none;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Experiment</span></p>
+  </td>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>AnalysisEligible</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m40%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Baseline</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m41%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Country</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m42%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TestEndOdo</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m43%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TestEndTime</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m44%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TestSiteType</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m45%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TestStartOdo</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m46%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TestStartTime</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m47%</span></p>
+  </td>
+ </tr>
+ <tr style='height:17.0pt'>
+  <td nowrap style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TripID</span></p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:17.0pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>%m48%</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><b>Table: externalData-Map</b></h2>
+
+<h2>&nbsp;</h2>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0
+ style='width:626.0pt;border-collapse:collapse'>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Signal</span></b></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Min</span></b></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Max</span></b></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Average</span></b></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Frequency (of valid)</span></b></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Longest time without</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>UTCTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e20min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e20max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e20avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e20hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e20maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FileTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e21min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e21max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e21avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e21hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e21maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>DistIntersection</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e24min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e24max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e24avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e24hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e24maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>NumberOfLanes</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e25min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e25max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e25avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e25hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e25maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>RoadType</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e26min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e26max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e26avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e26hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e26maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>RulesIntersection</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e27min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e27max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e27avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e27hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e27maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>SpeedLimit</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e28min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e28max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e28avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e28hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e28maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>TypeIntersection</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e29min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e29max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e29avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e29hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e29maxpause%</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><b>&nbsp;</b></h2>
+
+<h2><b>Table: externalData-Weather (not required)</b></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0
+ style='width:626.0pt;border-collapse:collapse'>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Signal</span></b></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Min</span></b></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Max</span></b></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Average</span></b></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Frequency (of valid)</span></b></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BDD7EE;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><b><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Longest time without</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>UTCTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e80min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e80max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e80avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e80hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e80maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>FileTime</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e81min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e81max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e81avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e81hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e81maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Precipitation</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e82min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e82max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e82avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e82hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e82maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>PrecipitationType</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e83min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e83max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e83avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e83hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e83maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>RoadSurfaceCondition</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e84min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e84max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e84avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e84hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e84maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Temperature</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e85min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e85max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e85avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e85hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e85maxpause%</span></p>
+  </td>
+ </tr>
+ <tr style='height:14.4pt'>
+  <td width=172 nowrap valign=bottom style='width:129.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>Weather</span></p>
+  </td>
+  <td width=91 nowrap valign=bottom style='width:68.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e86min%</span></p>
+  </td>
+  <td width=95 nowrap valign=bottom style='width:71.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e86max%</span></p>
+  </td>
+  <td width=111 nowrap valign=bottom style='width:83.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e86avg%</span></p>
+  </td>
+  <td width=161 nowrap valign=bottom style='width:121.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e86hz%</span></p>
+  </td>
+  <td width=205 nowrap valign=bottom style='width:154.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 3.5pt 0cm 3.5pt;height:14.4pt'>
+  <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+  color:black'>&nbsp;%e86maxpause%</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2>&nbsp;</h2>
+
+<h2>&nbsp;Plots</h2>
+
+<h2>&nbsp;</h2>
+
+<h2><img width=800 height=400 src=sample1.png></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><img width=800 height=400 src=sample2.png></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><img width=800 height=400 src=sample3.png></h2>
+
+</div>
+
+</body>
+
+</html>
