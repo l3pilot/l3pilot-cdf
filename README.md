@@ -15,7 +15,7 @@ Some background information on the format can be found in our publication for th
 }
 ```
 
-The paper can be downloaded here: [http://indexsmart.mirasmart.com/26esv/PDFfiles/26ESV-000043.pdf](http://indexsmart.mirasmart.com/26esv/PDFfiles/26ESV-000043.pdf)
+The paper can be downloaded here: [https://www-esv.nhtsa.dot.gov/Proceedings/26/26ESV-000043.pdf](https://www-esv.nhtsa.dot.gov/Proceedings/26/26ESV-000043.pdf)
 
 ## Format
 
